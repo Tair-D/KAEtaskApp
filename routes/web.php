@@ -12,10 +12,20 @@
 */
 
 Route::get('/', function () {
+
+
     return view('welcome');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/task', 'TaskController@index');
+//Route::get('/alltasks','TaskController@getAll');
+//Route::get('/tasks/{task}', 'TaskController@getAllTaskForOneEmployee');
+//Route::post('/tasks/createtask', 'TaskController@insert');
+//Route::post('/tasks/createtask', 'TaskController@insert');
+//
+//
+//
+//Route::post('/tasks','TaskController@index');
+
