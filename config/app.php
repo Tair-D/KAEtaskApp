@@ -146,8 +146,9 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Musonza\Chat\ChatServiceProvider::class,
         PassportServiceProvider::class,
-
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -209,7 +210,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        'Chat' => Musonza\Chat\Facades\ChatFacade::class,
     ],
 
 ];

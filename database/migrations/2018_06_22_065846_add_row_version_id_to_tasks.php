@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGroupTable extends Migration
+class AddRowVersionIdToTasks extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateGroupTable extends Migration
      */
     public function up()
     {
-        Schema::create('group', function (Blueprint $table) {
-            $table->increments('id');
-            $table->text('group_name')->nullable(false)->comment('название группы');
-            $table->timestamps();
-        });
-
-
+        Schema::table('tasks',function($table){
+            $table->integer('version_id')->unsigned()->default(1)->after('project_id')->comment('ID версии');//---
+            $table->foreign('version_id')->references('id')->on('versions');
+        });//?????????????
     }
 
     /**
@@ -29,6 +26,6 @@ class CreateGroupTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('group');
+        //
     }
 }

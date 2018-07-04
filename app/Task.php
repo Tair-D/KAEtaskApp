@@ -7,6 +7,8 @@ class Task extends Model
 {
     protected $table = "tasks";
 
+    protected $primaryKey='id';//&&&&&&&&&
+
     public function creatorUser(){
         return $this->hasOne(User::class,'id','creator_id');
     }
@@ -28,6 +30,10 @@ class Task extends Model
 
     public function comments(){
         return $this->hasMany(Comment::class,'comment_id','id');
+    }
+
+    public function files(){
+        return $this->hasMany(File::class,'task_id','id');
     }
 
 }

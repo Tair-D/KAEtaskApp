@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGroupTable extends Migration
+class AddFilesTable1 extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,7 @@ class CreateGroupTable extends Migration
      */
     public function up()
     {
-        Schema::create('group', function (Blueprint $table) {
-            $table->increments('id');
-            $table->text('group_name')->nullable(false)->comment('название группы');
-            $table->timestamps();
-        });
-
-
+        //
     }
 
     /**
@@ -29,6 +23,6 @@ class CreateGroupTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('group');
+        //
     }
 }
